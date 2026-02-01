@@ -30,7 +30,7 @@ const FilterButton = styled.button`
   transition: all 0.3s;
 
   &:hover:not(:disabled) {
-    background-color: var(--color-brand-600);
+    box-shadow: inset 0 0 0 2px var(--color-brand-600);
     color: var(--color-brand-50);
   }
 `;

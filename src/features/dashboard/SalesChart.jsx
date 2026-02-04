@@ -1,6 +1,4 @@
-import styled from "styled-components";
-import DashboardBox from "./DashboardBox";
-import Heading from "../../ui/Heading";
+import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 import {
   Area,
   AreaChart,
@@ -10,8 +8,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import styled from "styled-components";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import Heading from "../../ui/Heading";
+import DashboardBox from "./DashboardBox";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -70,11 +70,13 @@ function SalesChart({ bookings, numDays }) {
             dataKey="label"
             tick={{ fill: colors.text }}
             tickLine={{ stroke: colors.text }}
+            axisLine={false}
           />
           <YAxis
             unit="$"
             tick={{ fill: colors.text }}
             tickLine={{ stroke: colors.text }}
+            axisLine={false}
           />
           <CartesianGrid strokeDasharray="4" />
           <Tooltip contentStyle={{ backgroundColor: colors.background }} />

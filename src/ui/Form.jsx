@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components";
 
-const Form = styled.form`
+const Form = styled.form.attrs((props) => ({
+  type: props.type ?? "regular",
+}))`
   ${(props) =>
     props.type === "regular" &&
     css`
@@ -21,9 +23,5 @@ const Form = styled.form`
   overflow: hidden;
   font-size: 1.4rem;
 `;
-
-Form.defaultProps = {
-  type: "regular",
-};
 
 export default Form;

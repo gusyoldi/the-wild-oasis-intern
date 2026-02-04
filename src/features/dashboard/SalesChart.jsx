@@ -1,4 +1,6 @@
-import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import styled from "styled-components";
+import DashboardBox from "./DashboardBox";
+import Heading from "../../ui/Heading";
 import {
   Area,
   AreaChart,
@@ -8,10 +10,8 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import styled from "styled-components";
 import { useDarkMode } from "../../context/DarkModeContext";
-import Heading from "../../ui/Heading";
-import DashboardBox from "./DashboardBox";
+import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;

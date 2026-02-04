@@ -39,8 +39,8 @@ importers:
         specifier: 2.6.0
         version: 2.6.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react-icons:
-        specifier: 4.8.0
-        version: 4.8.0(react@19.2.4)
+        specifier: 5.5.0
+        version: 5.5.0(react@19.2.4)
       react-router-dom:
         specifier: 7.13.0
         version: 7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -3303,8 +3303,8 @@ packages:
       react: '>=16'
       react-dom: '>=16'
 
-  react-icons@4.8.0:
-    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+  react-icons@5.5.0:
+    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
       react: '*'
 
@@ -7379,7 +7379,7 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  react-icons@4.8.0(react@19.2.4):
+  react-icons@5.5.0(react@19.2.4):
     dependencies:
       react: 19.2.4
 

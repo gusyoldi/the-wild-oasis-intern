@@ -88,3 +88,9 @@ Defined in `.env.local` (never committed):
 
 - Netlify SPA redirect: `/* -> /index.html`.
 - Ensure Supabase RLS and bucket permissions allow expected operations.
+
+## Tooling
+
+- ESLint Flat Config (JS + React), script: `pnpm lint`
+- Vitest (unit/integration con jsdom), script: `pnpm test`
+- Husky + Commitlint: hook `commit-msg` valida convención de mensajes

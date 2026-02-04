@@ -36,6 +36,8 @@ Aplicación SPA de gestión de alojamientos (“cabañas”) con reservas, check
 - `dev`: inicia el servidor de desarrollo de Vite
 - `build`: genera el build de producción
 - `preview`: sirve el bundle generado localmente
+- `lint`: corre ESLint con Flat Config
+- `test`: corre Vitest (jsdom) para unit/integration
 
 ## Directorios destacados
 
@@ -50,3 +52,7 @@ Aplicación SPA de gestión de alojamientos (“cabañas”) con reservas, check
 
 - Las políticas RLS de Supabase y permisos de buckets deben permitir las operaciones necesarias de auth/db/storage.
 - No se deben commitear claves/tokens; usa únicamente claves públicas de Supabase en el cliente.      
+
+## Convención de commits
+
+- Commitlint valida mensajes tipo Conventional Commits (hook `commit-msg` con Husky).

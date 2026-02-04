@@ -1,53 +1,43 @@
 import js from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
+import globals from "globals";
+import react from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist/**", "node_modules/**"] },
-  { settings: { react: { version: "detect" } } },
-  js.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  { ignores: ["dist", "node_modules", ".trae"] },
   {
-    files: ["src/**/*.{js,jsx}"],
+    files: ["**/*.{js,jsx}"],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 2020,
       globals: {
-        window: "readonly",
-        document: "readonly",
-        navigator: "readonly",
-        localStorage: "readonly",
-        console: "readonly",
-        File: "readonly",
-        FormData: "readonly",
-        URL: "readonly",
-        Date: "readonly",
-        Intl: "readonly",
-        Number: "readonly",
-        Math: "readonly",
-        Error: "readonly",
-        JSON: "readonly",
-        String: "readonly",
-        Boolean: "readonly",
-        undefined: "readonly",
+        ...globals.browser,
+        ...globals.es2020,
       },
+      parserOptions: {
+        ecmaVersion: "latest",
+        ecmaFeatures: { jsx: true },
+        sourceType: "module",
+      },
+    },
+    settings: { react: { version: "18.3" } },
+    plugins: {
+      react,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
     },
     rules: {
-      "react/react-in-jsx-scope": "off",
-      "react/jsx-uses-react": "off",
+      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+      ...react.configs["jsx-runtime"].rules,
+      ...reactHooks.configs.recommended.rules,
+
+      "react/jsx-no-target-blank": "off",
       "react/prop-types": "off",
-    },
-  },
-  {
-    files: ["vite.config.*", "eslint.config.*"],
-    languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
-      globals: {
-        process: "readonly",
-        __dirname: "readonly",
-        module: "readonly",
-        require: "readonly",
-      },
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
     },
   },
 ];

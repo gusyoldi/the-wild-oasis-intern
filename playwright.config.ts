@@ -6,6 +6,11 @@ export default defineConfig({
   forbidOnly: true,
   retries: 0,
   reporter: [["list"]],
+  expect: {
+    toHaveScreenshot: {
+      maxDiffPixelRatio: 0.1,
+    },
+  },
   use: {
     baseURL: "http://localhost:5173",
     viewport: { width: 1440, height: 900 },

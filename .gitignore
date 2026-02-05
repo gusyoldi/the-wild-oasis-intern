@@ -1,6 +1,12 @@
 node_modules
+.DS_Store
+
+### secrets ###
 .env
 .env.local
-.DS_Store
-node_modules/
+
+## test ##
 test-results
+
+## IA ##
+.trae

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styles/helpers";
 
 const StyledFormRow = styled.div`
   display: grid;
@@ -24,6 +25,11 @@ const StyledFormRow = styled.div`
     display: flex;
     justify-content: flex-end;
     gap: 1.2rem;
+  }
+
+  @media ${device.mobile} {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 `;
 

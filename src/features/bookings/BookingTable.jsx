@@ -1,6 +1,7 @@
 import Empty from "../../ui/Empty";
 import Menus from "../../ui/Menus";
 import Table from "../../ui/Table";
+
 import BookingRow from "./BookingRow";
 
 import Pagination from "../../ui/Pagination";

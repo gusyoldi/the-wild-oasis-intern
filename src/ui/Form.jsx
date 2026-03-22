@@ -17,7 +17,7 @@ const Form = styled.form.attrs((props) => ({
   ${(props) =>
     props.type === "modal" &&
     css`
-      width: 80rem;
+      max-width: 80rem;
     `}
     
   overflow: hidden;

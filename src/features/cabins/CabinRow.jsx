@@ -4,7 +4,7 @@ import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Menus from "../../ui/Menus-v2";
 import Modal from "../../ui/Modal";
-import Table from "../../ui/Table-v2";
+import Table from "../../ui/Table";
 import { formatCurrency } from "../../utils/helpers";
 import CreateCabinForm from "./CreateCabinForm";
 import { useCreateCabin } from "./useCreateCabin";

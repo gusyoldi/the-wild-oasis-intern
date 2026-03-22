@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
 import { useOutsideClick } from "../hooks/useOutsideClick";
+import { device } from "../styles/helpers";
 
 const StyledModal = styled.div`
   position: fixed;
@@ -14,6 +15,13 @@ const StyledModal = styled.div`
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+
+  @media ${device.mobile} {
+    width: 90%;
+    max-height: 80vh;
+    padding: 2rem 1.6rem;
+    overflow-y: auto;
+  }
 `;
 
 const Overlay = styled.div`
@@ -90,7 +98,7 @@ function Window({ children, name }) {
         <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
     </Overlay>,
-    document.body
+    document.body,
   );
 }
 

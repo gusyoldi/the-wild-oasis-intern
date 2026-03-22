@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import Menus from "../../ui/Menus-v2";
 import Spinner from "../../ui/Spinner";
-import Table from "../../ui/Table-v2";
+import Table from "../../ui/Table";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
 import { filterByDiscount } from "./utils";
@@ -21,7 +21,7 @@ function CabinTable() {
   const [field, direction] = sortBy.split("-");
   const modifier = direction === "asc" ? 1 : -1;
   const sortedCabins = filteredCabins.sort(
-    (a, b) => (a[field] - b[field]) * modifier
+    (a, b) => (a[field] - b[field]) * modifier,
   );
 
   return (

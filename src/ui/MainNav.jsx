@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
 import {
   HiOutlineCalendarDays,
   HiOutlineCog6Tooth,
@@ -7,11 +5,19 @@ import {
   HiOutlineHomeModern,
   HiOutlineUsers,
 } from "react-icons/hi2";
+import { NavLink } from "react-router-dom";
+import styled from "styled-components";
+import { device } from "../styles/helpers";
 
 const NavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+
+  @media ${device.mobile} {
+    flex-direction: row;
+    gap: 0.2rem;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -50,6 +56,21 @@ const StyledNavLink = styled(NavLink)`
   &.active:link svg,
   &.active:visited svg {
     color: var(--color-brand-600);
+  }
+
+  @media ${device.mobile} {
+    &:link,
+    &:visited {
+      gap: 0.6rem;
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.6rem 0.6rem;
+    }
+
+    & svg {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
   }
 `;
 

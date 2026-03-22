@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../styles/helpers";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
 
@@ -11,6 +12,10 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 function Sidebar() {

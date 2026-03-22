@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { device } from "../styles/helpers";
 
 const sizes = {
   small: css`
@@ -12,6 +13,10 @@ const sizes = {
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
     font-weight: 500;
+
+    @media ${device.mobile} {
+      padding: 0.4rem 0.8rem;
+    }
   `,
   large: css`
     font-size: 1.6rem;

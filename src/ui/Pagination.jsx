@@ -1,6 +1,7 @@
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 import { useSearchParams } from "react-router-dom";
 import styled from "styled-components";
+import { device } from "../styles/helpers";
 import { PAGE_SIZE } from "../utils/constants";
 
 const StyledPagination = styled.div`
@@ -8,6 +9,11 @@ const StyledPagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media ${device.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const P = styled.p`

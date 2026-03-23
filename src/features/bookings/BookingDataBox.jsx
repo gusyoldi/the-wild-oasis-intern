@@ -10,6 +10,7 @@ import styled from "styled-components";
 import DataItem from "../../ui/DataItem";
 import { Flag } from "../../ui/Flag";
 
+import { device } from "../../styles/helpers";
 import { formatCurrency, formatDistanceFromNow } from "../../utils/helpers";
 
 const StyledBookingDataBox = styled.section`
@@ -49,6 +50,17 @@ const Header = styled.header`
     font-size: 2rem;
     margin-left: 4px;
   }
+
+  @media ${device.mobile} {
+    flex-wrap: wrap;
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
+
+    font-size: 1rem;
+  }
 `;
 
 const Section = styled.section`
@@ -65,6 +77,10 @@ const Guest = styled.div`
   & p:first-of-type {
     font-weight: 500;
     color: var(--color-grey-700);
+  }
+
+  @media ${device.mobile} {
+    flex-wrap: wrap;
   }
 `;
 
@@ -92,6 +108,20 @@ const Price = styled.div`
     width: 2.4rem;
     color: currentColor !important;
   }
+
+  @media ${device.mobile} {
+    flex-wrap: wrap;
+    font-size: 1rem;
+    gap: 1.2rem;
+
+    & p:last-child {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    padding: 1rem 2rem;
+  }
 `;
 
 const Footer = styled.footer`
@@ -101,7 +131,6 @@ const Footer = styled.footer`
   text-align: right;
 `;
 
-// A purely presentational component
 function BookingDataBox({ booking }) {
   const {
     created_at,

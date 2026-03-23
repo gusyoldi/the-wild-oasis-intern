@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/helpers";
 
 const StyledStat = styled.div`
   /* Box */
@@ -12,6 +13,11 @@ const StyledStat = styled.div`
   grid-template-rows: auto auto;
   column-gap: 1.6rem;
   row-gap: 0.4rem;
+
+  @media ${device.mobile} {
+    grid-template-columns: 4rem 1fr;
+    column-gap: 1rem;
+  }
 `;
 
 const Icon = styled.div`
@@ -22,13 +28,19 @@ const Icon = styled.div`
   align-items: center;
   justify-content: center;
 
-  /* Make these dynamic, based on the received prop */
   background-color: var(--color-${(props) => props.color}-100);
 
   & svg {
     width: 3.2rem;
     height: 3.2rem;
     color: var(--color-${(props) => props.color}-700);
+  }
+
+  @media ${device.mobile} {
+    & svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;
 
@@ -39,12 +51,20 @@ const Title = styled.h5`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-500);
+
+  @media ${device.mobile} {
+    font-size: 1rem;
+  }
 `;
 
 const Value = styled.p`
   font-size: 2.4rem;
   line-height: 1;
   font-weight: 500;
+
+  @media ${device.mobile} {
+    font-size: 1.6rem;
+  }
 `;
 
 function Stat({ icon, title, value, color }) {

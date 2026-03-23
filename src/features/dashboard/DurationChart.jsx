@@ -1,5 +1,3 @@
-import styled from "styled-components";
-import Heading from "../../ui/Heading";
 import {
   Cell,
   Legend,
@@ -8,7 +6,10 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import styled from "styled-components";
 import { useDarkMode } from "../../context/DarkModeContext";
+import { device } from "../../styles/helpers";
+import Heading from "../../ui/Heading";
 
 const ChartBox = styled.div`
   /* Box */
@@ -25,6 +26,16 @@ const ChartBox = styled.div`
 
   & .recharts-pie-label-text {
     font-weight: 600;
+  }
+
+  @media ${device.mobile} {
+    grid-column: 1 / -1;
+    padding: 1rem 0.2rem;
+
+    & h2 {
+      padding-left: 3.2rem;
+      padding-top: 2.4rem;
+    }
   }
 `;
 
@@ -119,7 +130,7 @@ function prepareData(startData, stays) {
 
   function incArrayValue(arr, field) {
     return arr.map((obj) =>
-      obj.duration === field ? { ...obj, value: obj.value + 1 } : obj
+      obj.duration === field ? { ...obj, value: obj.value + 1 } : obj,
     );
   }
 
@@ -157,7 +168,7 @@ function DurationChart({ confirmedStays }) {
             dataKey="value"
             innerRadius={85}
             outerRadius={110}
-            cx="40%"
+            cx="46%"
             cy="50%"
             paddingAngle={3}
           >

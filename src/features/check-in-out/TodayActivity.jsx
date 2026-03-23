@@ -3,9 +3,10 @@ import styled from "styled-components";
 import Heading from "../../ui/Heading";
 import Row from "../../ui/Row";
 
-import { useTodayActivity } from "./useTodayActivity";
+import { device } from "../../styles/helpers";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+import { useTodayActivity } from "./useTodayActivity";
 
 const StyledToday = styled.div`
   /* Box */
@@ -19,6 +20,10 @@ const StyledToday = styled.div`
   gap: 2.4rem;
   grid-column: 1 / span 2;
   padding-top: 2.4rem;
+
+  @media ${device.mobile} {
+    grid-column: 1 / -1;
+  }
 `;
 
 const TodayList = styled.ul`

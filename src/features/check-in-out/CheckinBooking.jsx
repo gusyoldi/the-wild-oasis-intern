@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BookingDataBox from "../../features/bookings/BookingDataBox";
 
+import { device } from "../../styles/helpers";
 import Button from "../../ui/Button";
 import ButtonGroup from "../../ui/ButtonGroup";
 import ButtonText from "../../ui/ButtonText";
@@ -17,11 +18,22 @@ import { useSettings } from "../settings/useSettings";
 import { useCheckin } from "./useCheckin";
 
 const Box = styled.div`
-  /* Box */
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
   padding: 2.4rem 4rem;
+`;
+
+const HeadingGroup = styled.div`
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+
+  @media ${device.mobile} {
+    h1 {
+      font-size: 2.4rem;
+    }
+  }
 `;
 
 function CheckinBooking() {
@@ -71,7 +83,9 @@ function CheckinBooking() {
   return (
     <>
       <Row type="horizontal">
-        <Heading as="h1">Check in booking #{bookingId}</Heading>
+        <HeadingGroup>
+          <Heading as="h1">Check in booking #{bookingId}</Heading>
+        </HeadingGroup>
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>
 

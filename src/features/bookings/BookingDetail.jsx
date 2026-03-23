@@ -11,6 +11,7 @@ import BookingDataBox from "./BookingDataBox";
 import { HiArrowUpOnSquare } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
 import { useMoveBack } from "../../hooks/useMoveBack";
+import { device } from "../../styles/helpers";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Empty from "../../ui/Empty";
 import Modal from "../../ui/Modal";
@@ -24,8 +25,10 @@ const HeadingGroup = styled.div`
   gap: 2.4rem;
   align-items: center;
 
-  h1 {
-    font-size: 2.4rem;
+  @media ${device.mobile} {
+    h1 {
+      font-size: 2.4rem;
+    }
   }
 `;
 

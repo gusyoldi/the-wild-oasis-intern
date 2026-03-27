@@ -1,14 +1,11 @@
-export function useUser() {
-  // const { isLoading, data: user } = useQuery({
-  //   queryKey: ["user"],
-  //   queryFn: getCurrentUser,
-  // });
+import { useQuery } from "@tanstack/react-query";
+import { getCurrentUser } from "../../services/apiAuth";
 
-  const user = {
-    user_metadata: { fullName: "Gus" },
-    avatar: null,
-    email: "fakename@gmail.com",
-  };
+export function useUser() {
+  const { data: user } = useQuery({
+    queryKey: ["user"],
+    queryFn: getCurrentUser,
+  });
 
   return {
     isLoading: false,

@@ -10,10 +10,13 @@ import Bookings from "./pages/Bookings";
 import Cabins from "./pages/Cabins";
 import Checkin from "./pages/Checkin";
 import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import PageNotFound from "./pages/PageNotFound";
 import Settings from "./pages/Settings";
 import Users from "./pages/Users";
 import GlobalStyles from "./styles/GlobalStyles";
 import AppLayout from "./ui/AppLayout";
+import ProtectedRoute from "./ui/ProtectedRoute";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,9 +37,9 @@ function App() {
           <Routes>
             <Route
               element={
-                <AppLayout />
-                // <ProtectedRoute>
-                // </ProtectedRoute>
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
               }
             >
               <Route index element={<Navigate replace to="dashboard" />} />
@@ -50,8 +53,8 @@ function App() {
               <Route path="account" element={<Account />} />
             </Route>
 
-            {/* <Route path="login" element={<Login />} /> */}
-            {/* <Route path="*" element={<PageNotFound />} /> */}
+            <Route path="login" element={<Login />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
 
